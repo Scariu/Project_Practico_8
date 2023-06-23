@@ -19,11 +19,18 @@ public class MainActivity2 extends AppCompatActivity {
 
     private void initListeners() {
         Button buttonUrl = findViewById(R.id.buttonIntentUrl);
+        Button buttonBack = findViewById(R.id.buttonBack);
         buttonUrl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent implicitIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://kotlindoc.blogspot.com/2019/10/android-log-con-timber.html"));
                 startActivity(implicitIntent);
+            }
+        });
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
     }
